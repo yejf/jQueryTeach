@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular.js"></script>
+</head>
+
+<body>
+    原文: <input type="text"> <br>
+    复制: <span></span>
+
+</body>
+<script>
+
+    var ipt = document.querySelector('input') ,//中断
+        sp = document.querySelector("span") ;//终止
+    ipt.oninput = function () {
+        var t = ipt.value ;
+        sp.innerHTML = t ;
+    }
+</script>
+</html>

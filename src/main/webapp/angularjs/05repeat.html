@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular.js"></script>
+</head>
+
+<body ng-app="app1" ng-controller="c">
+
+    筛选: <input type="text" ng-model="a">
+    <ol>
+        <li ng-repeat="x in arr | filter:a track by $index">{{x+'-'+$index}}</li>
+    </ol>
+</body>
+<script>
+    var app = angular.module('app1',[])
+    app.controller('c',function ($scope,$http) {
+
+        $scope.arr = ['炒菜','面食','外卖','不吃','炒菜','面食','外卖','不吃','炒菜','面食','外卖','不吃']
+//      for (var i=0;i<$scope.arr.length;i++){
+//            var newli = document.createElement("li") ;
+//            newli.innerText = $scope.arr[i] ;
+//            document.querySelector('ol').appendChild(newli)
+//        }
+        $http({
+            url:"${base}/fusioncharts/getData",
+            method:"get"
+        }).then(function (res) {
+            console.log(res)
+        },
+            function (err) {
+                console.log(err)
+            })
+
+
+    })
+</script>
+</html>

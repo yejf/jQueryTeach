@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/angular.js"></script>
+</head>
+
+<body ng-app="app1" ng-controller="c">
+    <h4>数据双向绑定</h4>
+    原文: <input type="text" ng-model="a"> <br>
+    <h4>*双胡表达式{{}}</h4>
+    复制: <span>{{a}}</span>
+</body>
+<script>
+    var app = angular.module('app1',[])
+    app.controller('c',function ($scope) {
+
+        $scope.a = 666 ;
+
+
+    })
+</script>
+</html>
